@@ -50,7 +50,7 @@ export default function Header() {
           <Link href="/">
             <h2 className="flex font-bold">
               Foodie Us
-              <BiFoodMenu size={20} className="ml-1" />
+              <BiFoodMenu size={20} className="ml-2" />
             </h2>
           </Link>
           <SearchBar />

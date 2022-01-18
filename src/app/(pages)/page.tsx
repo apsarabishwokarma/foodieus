@@ -1,20 +1,19 @@
 import HeroCarousel from "@/components/hero/hero-carousel";
-import ProductShowcase from "@/components/product/deliveryshowcase";
+import DeliveryFoodShowcase from "@/components/product/delivery-showcase";
+import FoodRecommend from "@/components/product/food-recommendation";
+import BestSellingFoods from "@/components/product/foods-grid";
 import FoodShowcase from "@/components/product/foods-showcase";
-import ProductGrid from "@/components/product/product-grid";
+import Testimonials from "@/components/testimonials";
 
 export default function Home() {
   return (
     <>
       <HeroCarousel />
-      <ProductGrid
-        heading="Featured Products"
-        title="BEST SELLER PRODUCTS"
-        subtitle="Discover, click, and shop, Just a click away from your next
-            purchase."
-      />
-      <ProductShowcase />
+      <BestSellingFoods />
+      <DeliveryFoodShowcase />
+      <FoodRecommend />
       <FoodShowcase />
+      <Testimonials />
     </>
   );
 }

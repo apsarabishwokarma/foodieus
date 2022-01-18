@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { FaStar } from "react-icons/fa";
 import Button from "../ui/button";
-import ProductGrid from "./product-grid";
 
 type Product = {
   id: number;
@@ -23,32 +22,6 @@ type ProductDetailsProps = {
 };
 
 export default function ProductDetails({ product }: { product: Product }) {
-  //client side data fetching
-  // const [product, setProduct] = useState<Product | null>(null);
-  // const [isLoading, setIsLoading] = useState(true);
-
-  // useEffect(() => {
-  //   async function getData() {
-  //     try {
-  //       const res = await fetch(
-  //         `https://fakestoreapi.com/products/${productId}`
-  //       );
-  //       const json = await res.json();
-  //       setProduct(json);
-  //     } catch (e) {
-  //       console.log("error");
-  //     } finally {
-  //       setIsLoading(false);
-  //     }
-  //   }
-
-  //   getData();
-  // }, [productId]);
-
-  // if (!product) {
-  //   return <div>Loading...</div>;
-  // }
-
   return (
     <div className="container mx-auto px-6">
       <div className="flex md:gap-20 gap-4 md:flex-row flex-col py-8 justify-center">
@@ -163,7 +136,6 @@ export default function ProductDetails({ product }: { product: Product }) {
           </div>
         </div>
       </div>
-      <ProductGrid title="Recommended Products" limit={4} />
     </div>
   );
 }

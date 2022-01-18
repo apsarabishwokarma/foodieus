@@ -3,7 +3,7 @@ import Button from "../ui/button";
 export default function ProductShowcase() {
   return (
     <>
-      <div className="bg-green-200 text-black py-10 mt-20">
+      <div className="bg-black text-white py-10 mt-20">
         <div className="flex items-center justify-center flex-col-reverse md:flex-row gap-24 container mx-auto px-6">
           <div className="flex flex-col gap-4 justify-center items-center text-center">
             <h1 className="font-bold text-3xl ml-3">
@@ -14,7 +14,7 @@ export default function ProductShowcase() {
               Explore our wide range of products
               <br /> Find everything you need to elevate your lifestyle
             </p>
-            <Button className="mb-2" />
+            <Button className="mb-2 bg-orange-600" />
           </div>
           <figure>
             <img

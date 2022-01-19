@@ -5,6 +5,7 @@ export const foods = [
     price: 10,
     image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38",
     description: "",
+    rating: "4.8",
   },
   {
     id: 2,
@@ -12,6 +13,7 @@ export const foods = [
     price: 8,
     image: "https://plus.unsplash.com/premium_photo-1683619761492-639240d29bb5",
     description: "",
+    rating: "4.8",
   },
   {
     id: 3,
@@ -19,6 +21,7 @@ export const foods = [
     price: 12,
     image: "https://images.unsplash.com/photo-1555949258-eb67b1ef0ceb",
     description: "",
+    rating: "4.8",
   },
   {
     id: 4,
@@ -26,6 +29,7 @@ export const foods = [
     price: 15,
     image: "https://images.unsplash.com/photo-1564489563601-c53cfc451e93",
     description: "",
+    rating: "4.8",
   },
   {
     id: 5,
@@ -33,6 +37,7 @@ export const foods = [
     price: 7,
     image: "https://images.unsplash.com/photo-1592928300296-6f3a66f6fcd8",
     description: "",
+    rating: "4.8",
   },
   {
     id: 6,
@@ -40,6 +45,7 @@ export const foods = [
     price: 20,
     image: "https://images.unsplash.com/photo-1592966755546-df09c0e6c5e8",
     description: "",
+    rating: "4.8",
   },
   // {
   //   id: 7,

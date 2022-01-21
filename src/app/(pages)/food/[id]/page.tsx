@@ -48,5 +48,20 @@ export default function FoodDetailsPage() {
     return <p>No food details available.</p>;
   }
 
-  return <FoodDetails food={food} />;
+  return (
+    <FoodDetails
+      product={{
+        id: 0,
+        title: "",
+        price: 0,
+        description: "",
+        category: "",
+        image: "",
+        rating: {
+          rate: 0,
+          count: 0,
+        },
+      }}
+    />
+  );
 }

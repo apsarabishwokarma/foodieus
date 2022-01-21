@@ -2,15 +2,7 @@
 import { foods } from "@/data/foods";
 import { useCart } from "../cart/cart-context";
 
-type Food = {
-  id: number;
-  name: string;
-  price: number;
-  description: string;
-  image: string;
-};
-
-export default function FoodRecommend({ food }: { food: Food }) {
+export default function FoodRecommend() {
   const { addCartItem } = useCart();
 
   return (

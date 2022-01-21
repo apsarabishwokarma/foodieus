@@ -14,8 +14,7 @@ export default function Button({
     solid: "bg-blue-500 hover:bg--400 blue text-white",
     outlined:
       "bg-transparent hover:bg-blue-400 text-white border border-blue-500",
-    bgcart:
-      "bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-600 transition",
+    bgcart: "bg-blue-500 text-white hover:bg-blue-600 transition",
   };
 
   return (

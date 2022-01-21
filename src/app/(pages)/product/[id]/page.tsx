@@ -1,4 +1,4 @@
-import ProductDetails from "@/components/product/product-details";
+import ProductDetails from "@/components/product/food-details";
 import { redirect } from "next/navigation";
 
 export default async function ProductDetailsPage({

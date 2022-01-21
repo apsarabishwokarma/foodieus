@@ -6,7 +6,7 @@ export default function Topbar() {
     <>
       <div className="bg-gradient-to-r from-pink-100 via-pink-50 to-pink-300 text-black justify-between md:flex hidden px-4 py-4">
         <p className="flex items-center justify-center font-bold">
-          <IoCallOutline className="mr-2" size={16} /> 01-645781
+          <IoCallOutline className="mr-2" size={16} /> 061-098787
         </p>
         <p className="flex items-center justify-center font-bold">
           <IoMailOutline className="mr-2" size={16} />

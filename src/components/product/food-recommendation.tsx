@@ -2,11 +2,11 @@ import { foods } from "@/data/foods";
 
 export default function FoodRecommend() {
   return (
-    <div className=" container mx-auto flex flex-wrap lg:flex-nowrap gap-8 pt-4 bg-gray-50">
+    <div className="container mx-auto flex flex-wrap lg:flex-nowrap gap-8 bg-gray-50">
       <div>
-        <h1 className="text-xl font-bold text-center mb-6">Popular Foods</h1>
+        <h1 className="text-xl font-bold text-center m-6">Popular Foods</h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
-          {foods.map((food) => (
+          {foods.slice(0, 9).map((food) => (
             <div
               key={food.id}
               className="bg-white shadow-md rounded-lg p-4 hover:shadow-lg transition-shadow group min-h-[16rem] flex flex-col justify-between"
@@ -33,7 +33,7 @@ export default function FoodRecommend() {
           ))}
         </div>
       </div>
-      <div className="flex items-center justify-center w-full lg:w-1/3">
+      <div className="md:flex hidden items-center justify-center w-full lg:w-1/3">
         <figure className="relative w-full h-full">
           <img
             src="/assets/col-md-4.jpg"

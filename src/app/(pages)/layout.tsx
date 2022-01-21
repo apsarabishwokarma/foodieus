@@ -11,8 +11,10 @@ export default function PagesLayout({
   return (
     <Providers>
       <Topbar />
-      <Header />
-      {children}
+      <Providers>
+        <Header />
+        {children}
+      </Providers>
       <Footer />
     </Providers>
   );

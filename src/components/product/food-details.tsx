@@ -4,12 +4,11 @@ import Image from "next/image";
 import { FaStar } from "react-icons/fa";
 import Button from "../ui/button";
 
-type Product = {
+type food = {
   id: number;
-  title: string;
+  name: string;
   price: number;
   description: string;
-  category: string;
   image: string;
   rating: {
     rate: number;
@@ -17,18 +16,18 @@ type Product = {
   };
 };
 
-type ProductDetailsProps = {
-  productId: string;
+type foodDetailsProps = {
+  foodId: string;
 };
 
-export default function ProductDetails({ product }: { product: Product }) {
+export default function foodDetails({ food }: { food: food }) {
   return (
     <div className="container mx-auto px-6">
       <div className="flex md:gap-20 gap-4 md:flex-row flex-col py-8 justify-center">
         <figure className="aspect-square md:max-w-xl w-full">
           <Image
-            src={product.image}
-            alt={product.title}
+            src={food.image}
+            alt={food.name}
             height={800}
             width={800}
             className="object-contain w-full h-full  border rounded-sm"
@@ -37,24 +36,22 @@ export default function ProductDetails({ product }: { product: Product }) {
         </figure>
         <div className="w-full h-full sticky top-4 ">
           <div className="flex flex-col gap-4">
-            <h2 className="text-gray-600 font-bold text-2xl">
-              {product.title}
-            </h2>
+            <h2 className="text-gray-600 font-bold text-2xl">{food.name}</h2>
             <p className="text-gray-600 font-bold text-xl">
-              Price: ${product.price}
+              Price: ${food.price}
             </p>
             <p className="font-semibold">
               <span>Availability: </span>
               <span className="text-green-500 ">In Stock</span>{" "}
             </p>
-            <p>{product.description}</p>
+            <p>{food.description}</p>
             <p className="text-gray-600 font-bold text-xl">
-              Price: ${product.price}
+              Price: ${food.price}
             </p>
             <div className="text-gray-600">
-              {product.rating.rate}{" "}
+              {food.rating.rate}{" "}
               <FaStar className="fill-yellow-400 inline mr-2" /> by{" "}
-              {product.rating.count} users
+              {food.rating.count} users
             </div>
 
             <Button variant="outlined">Add to cart</Button>
@@ -74,11 +71,11 @@ export default function ProductDetails({ product }: { product: Product }) {
               <FaStar className="text-slate-200" />
             </div>
             <div className="flex flex-col gap-3">
-              <h2 className="font-semibold"> Amazing product!</h2>
+              <h2 className="font-semibold"> Amazing food!</h2>
               <p>
                 {" "}
-                This product has exceeded my expectations. It's well-designed
-                and easy to use. However, I wish it had a few more features.
+                This foodhas exceeded my expectations. It's well-designed and
+                easy to use. However, I wish it had a few more features.
                 Overall, I'm satisfied with my purchase.
               </p>
               <div className="flex gap-2 items-center">
@@ -109,10 +106,10 @@ export default function ProductDetails({ product }: { product: Product }) {
               <FaStar className="text-slate-200" />
             </div>
             <div className="flex flex-col gap-3">
-              <h2 className="font-semibold">Great product!</h2>
+              <h2 className="font-semibold">Great food!</h2>
               <p>
-                This product has exceeded my expectations. It's well-designed
-                and easy to use. However, I wish it had a few more features.
+                This foodhas exceeded my expectations. It's well-designed and
+                easy to use. However, I wish it had a few more features.
                 Overall, I'm satisfied with my purchase.
               </p>
               <div className="flex gap-2 items-center">

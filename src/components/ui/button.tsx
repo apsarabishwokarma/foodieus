@@ -1,29 +1,29 @@
 import { ButtonHTMLAttributes } from "react";
 
 type ButtonProps = {
-  variant?: "solid" | "outlined";
-  // children:ReactNode
+  variant?: "solid" | "outlined" | "bgcart";
 } & ButtonHTMLAttributes<HTMLButtonElement>;
 
 export default function Button({
   variant = "solid",
   children = "Start Now",
-  className,
+  className = "",
   ...props
 }: ButtonProps) {
+  const variantClasses = {
+    solid: "bg-blue-500 hover:bg--400 blue text-white",
+    outlined:
+      "bg-transparent hover:bg-blue-400 text-white border border-blue-500",
+    bgcart:
+      "bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-600 transition",
+  };
+
   return (
-    <>
-      <button
-        className={`max-w-max rounded-md py-3 px-10  ${
-          variant === "solid"
-            ? "bg-blue-500 hover:bg--400 blue text-white"
-            : "bg-transparent hover:bg-blue-400 text-white border border-blue-500 "
-        } ${className}`}
-        {...props}
-      >
-        {children}
-      </button>
-    </>
+    <button
+      className={`max-w-max rounded-md py-3 px-10 ${variantClasses[variant]} ${className}`}
+      {...props}
+    >
+      {children}
+    </button>
   );
 }
-``;

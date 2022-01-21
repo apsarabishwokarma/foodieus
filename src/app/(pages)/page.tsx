@@ -10,9 +10,23 @@ export default function Home() {
     <>
       <HeroCarousel />
       <BestSellingFoods />
-      <DeliveryFoodShowcase />
-      <FoodRecommend />
+      <BestSellingFoods
+        title="Trending Foods"
+        subtitle="Don't miss out!"
+        limit={10}
+      />
+
       <FoodShowcase />
+      <FoodRecommend
+        food={{
+          id: 0,
+          name: "",
+          price: 0,
+          description: "",
+          image: "",
+        }}
+      />
+      <DeliveryFoodShowcase />
       <Testimonials />
     </>
   );

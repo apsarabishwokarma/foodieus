@@ -1,5 +1,3 @@
-import Button from "../ui/button";
-
 export default function FoodShowcase() {
   return (
     <>
@@ -34,16 +32,18 @@ export default function FoodShowcase() {
               we’ve got something for every craving.
             </p>
 
-            <Button children={"Order Now"} />
+            {/* <Button children={"Order Now"} /> */}
           </div>
         </div>
       </div>
-      <div className="bg-gradient-to-r from-pink-100 via-pink-50 to-pink-300 text-black p-6 rounded-lg shadow-lg text-center w-full">
+      <div className="bg-gradient-to-r from-pink-100 via-pink-50 to-pink-300 text-black p-6 rounded-lg shadow-lg text-center w-full mx-auto border-y-2 border-black">
         <h1 className="text-2xl font-bold mb-2">Welcome, Foodie!</h1>
-        <p className="text-sm mb-4">
-          Explore a world of delicious cuisines and dining experiences.
+        <p className="text-sm mb-4 leading-relaxed">
+          Embark on a journey to discover the most tantalizing cuisines and
+          hidden culinary gems. Whether you're craving authentic flavors or
+          unique dining experiences, we've got you covered.
         </p>
-        <button className="bg-black text-white font-semibold py-2 px-4 rounded-full shadow hover:bg-red-500 hover:text-white transition">
+        <button className="text-white font-semibold py-2 px-6 rounded-full shadow bg-gray-600  transition">
           Discover More
         </button>
       </div>

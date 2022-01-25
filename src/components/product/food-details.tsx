@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { FaStar } from "react-icons/fa";
+import { useCart } from "../cart/cart-context";
 import Button from "../ui/button";
 
 type Food = {
@@ -21,6 +22,7 @@ type Food = {
 
 export default function FoodDetails({ food }: { food: Food }) {
   const [activeTab, setActiveTab] = useState("details");
+  const { totalQuantity, addCartItem } = useCart();
 
   const handleTabChange = (tab: string) => {
     setActiveTab(tab);
@@ -71,7 +73,20 @@ export default function FoodDetails({ food }: { food: Food }) {
                   </div>
                 </div>
               )}
-              <Button variant="bgcart">Add to Cart</Button>
+              <Button
+                variant="bgcart"
+                onClick={() =>
+                  addCartItem({
+                    id: food.id,
+                    image: food.image,
+                    name: food.name,
+                    price: food.price,
+                    itemQuantity: 1,
+                  })
+                }
+              >
+                Add to Cart
+              </Button>
             </div>
           </div>
         </div>
@@ -103,7 +118,7 @@ export default function FoodDetails({ food }: { food: Food }) {
           <div className="bg-white p-6 shadow-lg rounded-b-lg">
             {activeTab === "details" && (
               <div>
-                <h3 className="font-semibold text-xl mb-4">Product Details</h3>
+                <h3 className="font-semibold text-xl mb-4">food Details</h3>
                 <p>
                   {food.description ||
                     "Detailed information about the food will be displayed here."}
@@ -136,7 +151,7 @@ export default function FoodDetails({ food }: { food: Food }) {
                         alt="avatar"
                         width={50}
                         height={50}
-                        className="object-cover w-[50px] aspect-square rounded-full"
+                        className="object-cover w-[60px] aspect-square rounded-full"
                       />
                       <div>
                         <p>Apsara Bishwokarma</p>
@@ -161,9 +176,9 @@ export default function FoodDetails({ food }: { food: Food }) {
           </div>
         </div>
 
-        {/* Related Products Section */}
+        {/* Related foods Section */}
         <div className="mt-10">
-          <h3 className="font-semibold text-xl mb-4">Related Products</h3>
+          <h3 className="font-semibold text-xl mb-4">Related foods</h3>
           <div className="flex gap-6 overflow-x-auto cursor-pointer">
             {foods.slice(0, limit).map((relatedFood) => (
               <div
@@ -176,7 +191,7 @@ export default function FoodDetails({ food }: { food: Food }) {
                     alt={relatedFood.name}
                     width={150}
                     height={150}
-                    className="rounded-md"
+                    className="object-cover rounded-md"
                   />
                   <div className="flex flex-col flex-grow mt-2">
                     <h4 className="font-semibold text-sm truncate">

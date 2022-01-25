@@ -89,49 +89,4 @@ export const foods = [
       "A cool and creamy treat available in a variety of flavors like chocolate, vanilla, and strawberry, perfect for any time of day.",
     rating: { rate: 4.9, count: 150 },
   },
-  {
-    id: 11,
-    name: "Doughnut",
-    price: 4,
-    image: "https://images.unsplash.com/photo-1530016910220-faf7fab2125c",
-    description:
-      "A sweet and fluffy ring-shaped pastry, often glazed with sugar or topped with sprinkles and chocolate.",
-    rating: { rate: 4.8, count: 100 },
-  },
-  {
-    id: 12,
-    name: "Tacos",
-    price: 7,
-    image: "https://images.unsplash.com/photo-1551504734-5ee1c4a1479b",
-    description:
-      "A Mexican street food staple with soft or crispy tortillas filled with seasoned meat, fresh salsa, guacamole, and cheese.",
-    rating: { rate: 4.8, count: 120 },
-  },
-  {
-    id: 13,
-    name: "Waffles",
-    price: 9,
-    image: "https://images.unsplash.com/photo-1666052137730-e2c5c87f5671",
-    description:
-      "Crispy on the outside, fluffy on the inside, waffles are perfect for breakfast and often served with syrup and fruit.",
-    rating: { rate: 4.6, count: 90 },
-  },
-  {
-    id: 14,
-    name: "BBQ Ribs",
-    price: 18,
-    image: "https://images.unsplash.com/photo-1622665632960-aba7ac089541",
-    description:
-      "Tender and smoky ribs slathered in a tangy BBQ sauce, grilled to perfection.",
-    rating: { rate: 4.7, count: 115 },
-  },
-  {
-    id: 15,
-    name: "Pancakes",
-    price: 8,
-    image: "https://images.unsplash.com/photo-1669277038743-066083326c32",
-    description:
-      "Fluffy and golden pancakes served with butter and maple syrup, perfect for breakfast or brunch.",
-    rating: { rate: 4.8, count: 125 },
-  },
 ];

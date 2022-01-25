@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import { BiFoodMenu } from "react-icons/bi";
 import { CiMenuBurger, CiSearch } from "react-icons/ci";
+import { useCart } from "../cart/cart-context";
 import CartToggle from "../cart/cart-toggle";
 import SearchBar from "./search-bar";
 
@@ -25,7 +26,18 @@ export default function Header() {
   }, [isDrawerOpen]);
 
   // const classList = ["container", "mx-auto"];
+  useEffect(() => {
+    const body = document.querySelector("body");
+    if (isDrawerOpen) {
+      body?.classList.add("overflow-hidden");
+    } else {
+      body?.classList.remove("overflow-hidden");
+    }
+  }, [isDrawerOpen]);
 
+  // const classList = ["container", "mx-auto"];
+
+  const { totalQuantity } = useCart();
   return (
     <header className="bg-white">
       <div className="container mx-auto px-6 sm:hidden flex justify-between items-center py-6">
@@ -40,6 +52,11 @@ export default function Header() {
             <CiSearch size={24} />
 
             <CartToggle />
+            {totalQuantity > 0 && (
+              <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold rounded-full px-2 py-1">
+                {totalQuantity}
+              </span>
+            )}
 
             <CiMenuBurger size={24} onClick={toggleDrawer} />
           </div>
@@ -71,7 +88,14 @@ export default function Header() {
         </div>
 
         <div className="flex items-center gap-4 ">
-          <CartToggle />
+          <div className="relative">
+            <CartToggle />
+            {totalQuantity > 0 && (
+              <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold rounded-full flex justify-center items-center w-4 h-4">
+                {totalQuantity}
+              </span>
+            )}
+          </div>
           <div className="h-4 w-[1px] bg-black"></div>
           <Link href="/login">
             <p>Login</p>

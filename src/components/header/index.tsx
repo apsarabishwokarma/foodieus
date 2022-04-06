@@ -6,7 +6,6 @@ import { AiOutlineClose } from "react-icons/ai";
 import { BiFoodMenu } from "react-icons/bi";
 import { CiMenuBurger, CiSearch } from "react-icons/ci";
 import CartToggle from "../cart/cart-toggle";
-import Collections from "./collections";
 import SearchBar from "./search-bar";
 
 export default function Header() {
@@ -46,17 +45,16 @@ export default function Header() {
           </div>
         </div>
       </div>
-      <div className="container mx-auto px-6 sm:flex hidden text-black justify-between items-center gap-2 py-4">
-        <div className="flex items-center gap-4 w-full">
+      <div className=" flex container mx-auto px-6 sm:flex hidden text-black justify-between py-4">
+        <div className="flex gap-8 items-center w-full">
           <Link href="/">
             <h2 className="flex font-bold">
               Foodie Us
               <BiFoodMenu size={20} className="ml-1" />
             </h2>
           </Link>
-          <Collections />
           <SearchBar />
-          <nav className="flex gap-6 text-sm font-medium ml-16 mr-14">
+          <nav className="flex gap-6 text-sm font-medium ">
             <Link href="/">
               <p>Home</p>
             </Link>
@@ -94,9 +92,6 @@ export default function Header() {
               <AiOutlineClose size={24} />
             </div>
 
-            <Link href="/categories">
-              <p>Categories</p>
-            </Link>
             <Link href="/login" onClick={() => setIsDrawerOpen(false)}>
               <p>Login</p>
             </Link>

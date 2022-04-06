@@ -47,7 +47,7 @@ export default function Signup() {
       <div className="flex w-full h-screen">
         <div className="w-1/2 h-full relative">
           <Image
-            src="https://images.unsplash.com/photo-1586278500132-7c85dfbc51d6?"
+            src="https://images.unsplash.com/photo-1530554764233-e79e16c91d08?"
             alt="Login Image"
             layout="fill"
             objectFit="cover"
@@ -109,7 +109,7 @@ export default function Signup() {
                 className="border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
               />
               <Button
-                variant="outlined"
+                variant="solid"
                 type="submit"
                 className="py-2 rounded-lg w-full hover:bg-green-500 text-center flex items-center justify-center"
               >

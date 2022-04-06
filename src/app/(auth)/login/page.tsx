@@ -22,7 +22,7 @@ export default function Login() {
       <div className="flex w-full h-screen">
         <div className="w-1/2 h-full relative">
           <Image
-            src="https://images.unsplash.com/photo-1513094735237-8f2714d57c13?"
+            src="https://images.unsplash.com/photo-1506084868230-bb9d95c24759?"
             alt="Login Image"
             layout="fill"
             objectFit="cover"
@@ -69,9 +69,9 @@ export default function Login() {
                 </div>
               </Link>
               <Button
-                variant="outlined"
+                variant="solid"
                 type="submit"
-                className="py-2 rounded-lg w-full  hover:bg-green-500 text-center flex items-center justify-center "
+                className="py-2 rounded-lg w-full hover:bg-green-500 text-center flex items-center justify-center "
               >
                 Login
               </Button>

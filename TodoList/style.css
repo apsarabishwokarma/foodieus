@@ -57,8 +57,24 @@ body {
   text-align: center;
 }
 
+.addtask {
+}
+
 form {
   width: 100%;
+}
+
+.addbtn {
+  padding: 10px;
+  width: 10%;
+  background: grey;
+  color: white;
+  text-align: center;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 5px;
+  border: none;
 }
 
 input[type="text"] {
@@ -125,6 +141,11 @@ input[type="checkbox"] + label::before {
 input[type="checkbox"]:checked + label::before {
   outline: 2px solid green;
 }
+
+input[type="checkbox"]:checked + label {
+  text-decoration: line-through;
+}
+
 input[type="checkbox"]:checked + label::after {
   background-image: url("https://clipart-library.com/images_k/check-mark-png-transparent/check-mark-png-transparent-6.png");
   background-size: contain;

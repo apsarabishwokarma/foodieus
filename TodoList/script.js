@@ -2,7 +2,6 @@ const dateElement = document.querySelector(".date");
 const greetingElement = document.querySelector(".greeting h2");
 const addElement = document.querySelector(".addbtn");
 
-
 const currentDate = new Date();
 const months = [
   "January",
@@ -45,3 +44,9 @@ greetingElement.innerHTML = greeting;
 
 // Todo Form
 // todos = [{ title: "Make something", date: "", completed: true, id:'todoList1' }]
+
+document.querySelector("#addbtn").onclick = function () {
+  if (document.querySelector("todotask p").value.length == 0) {
+    alert("Kindly Enter Task Name!!!!");
+  }
+};

@@ -3,11 +3,15 @@ const greetingElement = document.querySelector(".greeting h2");
 const addElement = document.querySelector(".addbtn");
 const tasksContainer = document.getElementById("tasks");
 
+// Flag to determine whether to use the server or not
 const useServer = false;
 
+// API URL for server communication
 const apiURL = "http://localhost:3000";
 
+
 let todos = [];
+// Get the current date and time information
 const currentDate = new Date();
 const months = [
   "January",
@@ -28,6 +32,7 @@ const monthIndex = currentDate.getMonth();
 const month = months[monthIndex].substring(0, 3);
 const day = currentDate.getDate();
 
+// Display current date in the UI
 dateElement.innerHTML = `${month}<br>${day}`;
 
 const currentHour = new Date().getHours();
@@ -38,6 +43,7 @@ let greeting;
 // 12:00PM - 6:00PM - Good Afternoon!
 // 6:00PM - 12:00AM - Good Evening!
 
+// Determine the current time of day for a greeting message
 if (currentHour >= 0 && currentHour < 12) {
   greeting = "Good Morning!";
 } else if (currentHour >= 12 && currentHour < 18) {
@@ -47,6 +53,8 @@ if (currentHour >= 0 && currentHour < 12) {
 }
 
 greetingElement.innerHTML = greeting;
+
+// Form submission event listener
 
 const todoForm = document.querySelector("form");
 

@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Mukta&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mukta&family=Varela+Round&display=swap');
 body{
 
     background-color : antiquewhite;
@@ -9,5 +10,5 @@ body{
 
 }
 nav{
-
+font-family:'ubuntu',sans-serif;
 }

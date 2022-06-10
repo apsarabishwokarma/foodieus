@@ -27,7 +27,7 @@ let songs= [
 songItems.forEach((element, i)=>{ 
     element.getElementsByTagName("img")[0].src = songs[i].coverPath; 
     element.getElementsByClassName("songName")[0].innerText = songs[i].songName; 
-})
+}) 
 
 
 // event to Handle play/pause click
@@ -72,7 +72,7 @@ Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
         songIndex = parseInt(e.target.id);
         e.target.classList.remove('fa-circle-play');
         e.target.classList.add('fa-circle-pause');
-        audioElement.src = 'songs/${songIndex+1}.mp3';//to update songs accordingly
+        audioElement.src ='songs/{songIndex+1}.mp3';//'songs/${songIndex+ali}.mp3' ;//to update songs accordingly
         masterSongName.innerText = songs[songIndex].songName;
         audioElement.currentTime = 0;
         audioElement.play();

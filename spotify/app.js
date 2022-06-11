@@ -18,9 +18,9 @@ let songs= [
     {songName: "sasto mutu-sajjan Raj vaidya", filePath: "songs/sastomutu.mp3", coverPath: "covers/srv4.jpg"},
     {songName: "najik na aau-bartika rai", filePath: "songs/najik.mp3", coverPath: "covers/najik.jpg"},
     {songName: "hataridai batasidai-sajjan raj vaidya", filePath:"songs/hataarindai.mp3", coverPath: "covers/srv2.jpg"},
-    {songName: "hawaijahaj batasidai-sajjan raj vaidya", filePath:"songs/Hawaijahaj.mp3", coverPath: "covers/srv1.jpg"},
-    {songName: "lukamari-sajjan Raj vaidya", filePath:"songs/lukamari.mp3", coverPath: "covers/srv3.jpg"},
-    {songName: "khamosiyaan-Arjit singh", filePath:"songs/khamoshiyan.mp3", coverPath: "covers/kha1.jpg"},
+    {songName: "hawaijahaj batasidai-sajjan raj vaidya", filePath:"songs/hawaijahaj.mp3", coverPath: "covers/srv1.jpg"},
+    {songName: "lukamari-sajjan Raj vaidya", filePath: "songs/lukamari.mp3", coverPath: "covers/srv3.jpg"},
+    {songName: "khamosiyaan-Arjit singh", filePath: "songs/khamoshiyan.mp3", coverPath: "covers/kha1.jpg"},
 ]
 
 
@@ -90,7 +90,7 @@ document.getElementById('next').addEventListener('click', ()=>{
     else{
         songIndex += 1;
     }
- audioElement.src = songs[songIndex].filePath;
+   audioElement.src = songs[songIndex].filePath;
     masterSongName.innerText = songs[songIndex].songName;
     audioElement.currentTime = 0;
     audioElement.play();

@@ -1,8 +1,6 @@
 # webDev-projects
 [Spotify](https://apsarabiswokarma.github.io/webDev-projects/spotify)
 
-[TicTacToe](https://apsarabiswokarma.github.io/webDev-projects/tictactoe)
-
 [Digital clock](https://apsarabiswokarma.github.io/webDev-projects/clock)
 
 [projectile-simulation](https://apsarabiswokarma.github.io/webDev-projects/Projectile-simulation)
@@ -14,3 +12,7 @@
 [Portfolio Template](https://apsarabiswokarma.github.io/webDev-projects/portfolioTemplate)
 
 [minicalender](https://apsarabiswokarma.github.io/webDev-projects/miniCalender)
+
+[TicTacToe](https://apsarabiswokarma.github.io/webDev-projects/tictactoe)
+
+[]

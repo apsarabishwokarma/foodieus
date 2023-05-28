@@ -1,8 +1,9 @@
 <h1>Web Development Project</h1>
-This folder contains a collection of web development projects that utilize HTML, CSS, and JavaScript. Each project is contained within its own folder and includes all necessary files and assets.
+
+<div style="background-image: url('https://www.codingnepalweb.com/wp-content/uploads/2022/09/10-best-beginner-to-intermediate-js-projec-fix.jpg'); background-size: cover; background-position: center; height: 300px;"></div>
 
 <h3>Project Description</h3>
-This web development project is a folders contins several projects that can be used as a starting point for a variety of projects. It is fully responsive and can be viewed on any device. The project includes a basic HTML structure, a CSS file with styles for the webpage, and a JavaScript file for dynamic interactions.
+This folder contains a collection of web development projects that utilize HTML, CSS, and JavaScript. Each project is contained within its own folder and includes all necessary files and assets.
 
 <h3>Installing</h3>
 There are no specific installations required for this project. However, you may want to install a live server extension on your text editor to preview your changes.

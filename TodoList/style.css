@@ -96,6 +96,7 @@ input[type="text"] {
 
 input[type="checkbox"] {
   opacity: 0;
+  width: 0;
 }
 
 input[type="checkbox"] + label {
@@ -110,7 +111,8 @@ input[type="checkbox"] + label::after {
   content: "";
   position: absolute;
   left: 0;
-  top: 0;
+  top: 50%;
+  transform: translateY(-50%);
   width: 15px;
   height: 15px;
   border-radius: 50%;
@@ -126,7 +128,7 @@ input[type="checkbox"]:checked + label::before {
 input[type="checkbox"]:checked + label::after {
   background-image: url("https://clipart-library.com/images_k/check-mark-png-transparent/check-mark-png-transparent-6.png");
   background-size: contain;
-  transform: scale(1);
+  transform: translateY(-50%) scale(1);
   opacity: 1;
   transition: all 0.3s ease;
 }
@@ -146,6 +148,7 @@ input[type="checkbox"]:not(:checked) + label::after {
 .todoDate {
   margin-bottom: 0;
   font-size: small;
+  color: #8c8f8f;
 }
 
 .task {

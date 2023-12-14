@@ -2,7 +2,8 @@ body {
   margin: 0;
   padding-left: 16px;
   padding-top: 20px;
-  background-color: black;
+  background-color: #131313;
+
 }
 
 .maindiv {
@@ -11,11 +12,12 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+ 
   font-family: "Helvetica Neue", "ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,  Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 }
 
 .title {
-  color: white;
+color: white;
   display: flex;
   align-items: center;
   margin-bottom: 10px;
@@ -30,21 +32,21 @@ body {
 }
 
 .greeting h2 {
-  color: white;
+ 
   margin-bottom: 0;
   font-weight: bold;
   text-align: left;
 }
 
 .greeting p {
-  color: white;
+
   margin-top: 0;
   margin-left: 10px;
   font-weight: bolder;
 }
 
 .date {
-  color: white;
+  
   font-size: 24px;
   font-weight: bold;
   text-align: center;
@@ -52,14 +54,16 @@ body {
 
 .todoInput {
   width: 100%;
-  background-color: grey;
+  background-color: #252525;
+ 
 }
 
 input[type="text"] {
+  color:white;
   width: 100%;
   max-width: 500px;
-  padding: 12px;
-margin-bottom: 10px;
+ padding: 10px;
+
 }
 
 .todolist {
@@ -75,8 +79,8 @@ margin-bottom: 10px;
 }
 
 .todoDetails {
-  background-color: grey;
-  color: white;
+ color: white;
+  background-color: #252525;
   padding: 5px;
   width: 100%;
   max-width: 500px;
@@ -96,7 +100,7 @@ margin-bottom: 10px;
 }
 
 .todotask {
-  color: white;
+  
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -104,14 +108,14 @@ margin-bottom: 10px;
 }
 
 .todoDate {
-  color: white;
+ 
   margin-bottom: 0;
   font-size: small;
   font-weight: 300;
 }
 
 .task {
-  color: white;
+ 
   margin-top: 0;
   font-size: medium;
   font-weight: 500;

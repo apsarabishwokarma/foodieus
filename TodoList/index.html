@@ -5,29 +5,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ToDo List</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
+
 </head>
 
 <body>
-  <div class="maindiv">
+  <main class="maindiv">
     <div class="title">
       <p class="date">Feb<br>4</p>
       <div class="greeting">
-        <h2>Good Afternoon</h2>
+        <h2>Good Afternoon.</h2>
         <p>What's Your Plan for Today?</p>
       </div>
     </div>
 
-    <div>
-      <form>
-        <input type="text" class="todoInput" placeholder="Add Todo">
-      </form>
-    </div>
+    <form>
+      <input type="text" placeholder="Add Todo">
+    </form>
 
 
     <div class="todolist">
       <div class="todoDetails">
-        <div class="checkbox"></div>
+
+        <input type="checkbox" class="checkbox-style">
         <div class="todotask">
           <div class="todoDate">2023-02-05</div>
           <p class="task">Call MAX</p>
@@ -57,10 +60,8 @@
         </div>
       </div>
 
-
-
     </div>
-  </div>
+  </main>
 </body>
 
 </html>

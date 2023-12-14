@@ -13,53 +13,66 @@
 </head>
 
 <body>
+
   <main class="maindiv">
-    <div class="title">
-      <p class="date">Feb<br>4</p>
-      <div class="greeting">
-        <h2>Good Afternoon.</h2>
-        <p>What's Your Plan for Today?</p>
-      </div>
-    </div>
-
-    <form>
-      <input type="text" placeholder="Add Todo">
-    </form>
-
-
-    <div class="todolist">
-      <div class="todoDetails">
-
-        <input type="checkbox" class="checkbox-style">
-        <div class="todotask">
-          <div class="todoDate">2023-02-05</div>
-          <p class="task">Call MAX</p>
+    <div class="todo-wrapper">
+      <div class="title">
+        <p class="date">Feb<br>4</p>
+        <div class="greeting">
+          <h2>Good Afternoon.</h2>
+          <p>What's Your Plan for Today?</p>
         </div>
       </div>
 
+      <form>
+        <input type="text" placeholder="Add Todo">
+      </form>
 
-      <div class="todoDetails">
-        <div class="checkbox"></div>
-        <div class="todotask">
-          <div class="todoDate">2023-02-05</div>
-          <p class="task">Go to GYM</p>
-        </div>
-      </div>
-      <div class="todoDetails">
-        <div class="checkbox"></div>
-        <div class="todotask">
-          <div class="todoDate">2023-02-06</div>
-          <p class="task">Complete assignment</p>
-        </div>
-      </div>
-      <div class="todoDetails">
-        <div class="checkbox"></div>
-        <div class="todotask">
-          <div class="todoDate">2023-02-07</div>
-          <p class="task">learn js</p>
-        </div>
-      </div>
 
+      <div class="todolist">
+        <div class="todoDetails">
+          <input type="checkbox" id="todotask1" />
+          <label for="todotask1" class="todotask">
+            <div class="todoDate">2023-12-15</div>
+            <p class="task">Call MAX</p>
+          </label>
+        </div>
+
+        <div class="todoDetails">
+          <input type="checkbox" id="todotask2" />
+          <label for="todotask2" class="todotask">
+            <div class="todoDate">2023-12-15</div>
+            <p class="task">Buy some Books</p>
+          </label>
+        </div>
+
+        <div class="todoDetails">
+          <input type="checkbox" id="todotask3">
+          <label for="todotask3" class="todotask">
+            <div class="todoDate">2023-12-16</div>
+            <p class="task">learning position in css</p>
+          </label>
+        </div>
+
+        <div class="todoDetails">
+          <input type="checkbox" id="todotask4">
+          <label for="todotask4" class="todotask">
+            <div class="todoDate">2023-12-17</div>
+            <p class="task">complete Assignment</p>
+          </label>
+        </div>
+
+        <div class="todoDetails">
+          <input type="checkbox" id="todotask5">
+          <label for="todotask5" class="todotask">
+            <div class="todoDate">2023-12-18</div>
+            <p class="task">Cleaning Home</p>
+          </label>
+        </div>
+
+
+
+      </div>
     </div>
   </main>
 </body>

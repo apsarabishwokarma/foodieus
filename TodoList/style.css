@@ -14,9 +14,11 @@ body {
 
 .maindiv {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.todo-wrapper {
   width: 100%;
   max-width: 500px;
 }
@@ -62,11 +64,11 @@ form {
 input[type="text"] {
   width: 100%;
   background-color: #252525;
-  width: 100%;
-  background-color: #252525;
   color: white;
   padding: 10px;
   margin-bottom: 10px;
+  border: none;
+  border-radius: 5px;
 }
 
 .todolist {
@@ -76,7 +78,6 @@ input[type="text"] {
   flex-wrap: wrap;
   gap: 10px;
   justify-content: center;
-
   margin-bottom: 10px;
 }
 
@@ -88,23 +89,51 @@ input[type="text"] {
   flex-wrap: wrap;
   box-sizing: border-box;
   border: 1px solid black;
+  border-radius: 5px;
   gap: 10px;
   align-items: center;
 }
 
-/* The default styles for form elements like checkboxes are controlled by the browser and can be challenging to override completely. */
-/* input[type="checkbox"] {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  border: 1px solid red;
-} */
+input[type="checkbox"] {
+  opacity: 0;
+}
 
-.checkbox {
+input[type="checkbox"] + label {
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+input[type="checkbox"] + label::before,
+input[type="checkbox"] + label::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
   width: 15px;
   height: 15px;
   border-radius: 50%;
-  border: 1px solid green;
+  background: #fff;
+}
+
+input[type="checkbox"] + label::before {
+  outline: 2px solid white;
+}
+input[type="checkbox"]:checked + label::before {
+  outline: 2px solid green;
+}
+input[type="checkbox"]:checked + label::after {
+  background-image: url("https://clipart-library.com/images_k/check-mark-png-transparent/check-mark-png-transparent-6.png");
+  background-size: contain;
+  transform: scale(1);
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+input[type="checkbox"]:not(:checked) + label::after {
+  background-image: url("https://clipart-library.com/images_k/check-mark-png-transparent/check-mark-png-transparent-6.png");
+  background-size: contain;
+  opacity: 0;
 }
 
 .todotask {

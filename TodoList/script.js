@@ -1,7 +1,7 @@
 const dateElement = document.querySelector(".date");
 const greetingElement = document.querySelector(".greeting h2");
 const addElement = document.querySelector(".addbtn");
-
+let todos = [];
 const currentDate = new Date();
 const months = [
   "January",
@@ -47,7 +47,31 @@ function add() {
   }
 }
 
-function remove() {
-  const input = document.getElementById("todoInput");
-  tasksElement.remove();
+const todoForm = document.querySelector("#todoForm");
+
+todoForm.addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  const title = document.getElementById("todoInput").value;
+  currentDate = new Date();
+  const date = currentDate.toDateString();
+
+  const newTodo = {
+    title: title,
+    date: date,
+    completed: false,
+    id: `todotask${todos.length + 1}`,
+    class: `todotask${todos.length + 1}`,
+  };
+  todos.push(newTodo);
+  console.log(todos);
+});
+
+function remove(idToRemove) {
+  removeTodoById(idToRemove);
+}
+
+function removeTodoById(idToRemove) {
+  todos = todos.filter((todo) => todo.id !== idToRemove);
+  console.log(todos);
 }

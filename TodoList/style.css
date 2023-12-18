@@ -173,3 +173,10 @@ input[type="checkbox"]:not(:checked) + label::after {
   margin-top: 0;
   font-size: medium;
 }
+
+i {
+  position: absolute;
+  right: 400px;
+  color: red;
+  cursor: pointer;
+}

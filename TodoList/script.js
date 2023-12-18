@@ -1,6 +1,6 @@
 const dateElement = document.querySelector(".date");
 const greetingElement = document.querySelector(".greeting h2");
-const addElement = document.querySelector(".addbtn");
+const tasksElement = document.querySelector(".todoDetails");
 
 const currentDate = new Date();
 const months = [
@@ -42,11 +42,14 @@ if (currentHour >= 0 && currentHour < 12) {
 
 greetingElement.innerHTML = greeting;
 
-// Todo Form
-// todos = [{ title: "Make something", date: "", completed: true, id:'todoList1' }]
-
-document.querySelector("#addbtn").onclick = function () {
-  if (document.querySelector("todotask p").value.length == 0) {
-    alert("Kindly Enter Task Name!!!!");
+function Add() {
+  const input = document.getElementById("todoInput");
+  if (input.value == "") {
+    alert("Please Enter The Task !!!!");
   }
-};
+}
+
+function Remove() {
+  const input = document.getElementById("todoInput");
+  tasksElement.remove();
+}

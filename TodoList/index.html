@@ -9,7 +9,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
-
+  <script src="script.js"></script>
+  <script src="https://kit.fontawesome.com/c977b04c1d.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -26,8 +27,9 @@
 
 
       <form>
-        <input type="text" placeholder="Add Todo">
-        <button id="addbtn">Add</button>
+        <input type="text" placeholder="Add Todo" id="todoInput">
+        <button id="addbtn" onclick="Add()">Add</button>
+
       </form>
 
 
@@ -40,33 +42,28 @@
             <div class="todoDate">2023-12-15</div>
             <p class="task">Call MAX</p>
           </label>
+          <i class="fa-solid fa-trash" onclick="Remove()"></i>
         </div>
         <div class="todoDetails">
-          <input type="checkbox" id="todotask2" />
-          <label for="todotask2" class="todotask">
+          <input type="checkbox" id="todotask1" />
+          <label for="todotask1" class="todotask">
             <div class="todoDate">2023-12-15</div>
             <p class="task">Call MAX</p>
           </label>
+          <i class="fa-solid fa-trash" onclick="Remove()"></i>
         </div>
         <div class="todoDetails">
-          <input type="checkbox" id="todotask3" />
-          <label for="todotask3" class="todotask">
+          <input type="checkbox" id="todotask1" />
+          <label for="todotask1" class="todotask">
             <div class="todoDate">2023-12-15</div>
             <p class="task">Call MAX</p>
           </label>
+          <i class="fa-solid fa-trash" onclick="Remove()"></i>
         </div>
-        <div class="todoDetails">
-          <input type="checkbox" id="todotask4" />
-          <label for="todotask4" class="todotask">
-            <div class="todoDate">2023-12-15</div>
-            <p class="task">Call MAX</p>
-          </label>
-        </div>
-
       </div>
     </div>
   </main>
-  <script src="script.js"></script>
+
 </body>
 
 </html>

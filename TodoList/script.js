@@ -45,14 +45,14 @@ if (currentHour >= 0 && currentHour < 12) {
 
 greetingElement.innerHTML = greeting;
 
-function Add() {
+function add() {
   const input = document.getElementById("todoInput");
   if (input.value == "") {
     alert("Please Enter The Task !!!!");
   }
 }
 
-function Remove() {
+function remove() {
   const input = document.getElementById("todoInput");
   tasksElement.remove();
 }

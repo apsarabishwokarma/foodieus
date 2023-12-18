@@ -25,6 +25,8 @@ const day = currentDate.getDate();
 dateElement.innerHTML = `${month}<br>${day}`;
 
 const currentHour = new Date().getHours();
+currentDate = new Date().getDate();
+const input = document.querySelector('input[type="text"]');
 
 let greeting;
 
@@ -49,6 +51,32 @@ function Add() {
   }
 }
 
+const todos = [
+  {
+    title: "Call MAX",
+    date: "2023-12-15",
+    completed: false,
+    id: "todotask1",
+    class: "todotask1",
+  },
+  {
+    title: "Meeting with Team",
+    date: "2023-12-15",
+    completed: false,
+    id: "todotask2",
+    class: "todotask2",
+  },
+];
+const newTodo = [
+  {
+    title: input.value,
+    date: currentDate,
+    completed: false,
+    id: "todotask" + (todos.length + 1),
+    class: "todotask" + (todos.length + 1),
+  },
+];
+todos.push(newTodo);
 function Remove() {
   const input = document.getElementById("todoInput");
   tasksElement.remove();

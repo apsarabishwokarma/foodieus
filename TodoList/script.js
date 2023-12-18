@@ -21,6 +21,7 @@ const months = [
 const monthIndex = currentDate.getMonth();
 const month = months[monthIndex].substring(0, 3);
 const day = currentDate.getDate();
+const todos = [];
 
 dateElement.innerHTML = `${month}<br>${day}`;
 
@@ -51,20 +52,6 @@ function Add() {
   }
 }
 
-const todos = [];
-const newTodo = [
-  {
-    title: input.value,
-    date: currentDate,
-    completed: false,
-    id: "todotask" + (todos.length + 1),
-    class: "todotask" + (todos.length + 1),
-  },
-];
-
-console.log(todos);
-
-todos.push(newTodo);
 function Remove() {
   const input = document.getElementById("todoInput");
   tasksElement.remove();

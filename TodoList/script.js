@@ -1,6 +1,6 @@
 const dateElement = document.querySelector(".date");
 const greetingElement = document.querySelector(".greeting h2");
-const tasksElement = document.querySelector(".todoDetails");
+const addElement = document.querySelector(".addbtn");
 
 const currentDate = new Date();
 const months = [
@@ -21,13 +21,8 @@ const months = [
 const monthIndex = currentDate.getMonth();
 const month = months[monthIndex].substring(0, 3);
 const day = currentDate.getDate();
-const todos = [];
-
 dateElement.innerHTML = `${month}<br>${day}`;
-
 const currentHour = new Date().getHours();
-currentDate = new Date().getDate();
-const input = document.querySelector('input[type="text"]');
 
 let greeting;
 

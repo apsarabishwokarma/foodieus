@@ -51,22 +51,7 @@ function Add() {
   }
 }
 
-const todos = [
-  {
-    title: "Call MAX",
-    date: "2023-12-15",
-    completed: false,
-    id: "todotask1",
-    class: "todotask1",
-  },
-  {
-    title: "Meeting with Team",
-    date: "2023-12-15",
-    completed: false,
-    id: "todotask2",
-    class: "todotask2",
-  },
-];
+const todos = [];
 const newTodo = [
   {
     title: input.value,
@@ -76,6 +61,9 @@ const newTodo = [
     class: "todotask" + (todos.length + 1),
   },
 ];
+
+console.log(todos);
+
 todos.push(newTodo);
 function Remove() {
   const input = document.getElementById("todoInput");

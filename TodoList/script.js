@@ -1,6 +1,7 @@
 const dateElement = document.querySelector(".date");
 const greetingElement = document.querySelector(".greeting h2");
 const addElement = document.querySelector(".addbtn");
+const tasksContainer = document.getElementById("tasks");
 let todos = [];
 const currentDate = new Date();
 const months = [
@@ -21,7 +22,9 @@ const months = [
 const monthIndex = currentDate.getMonth();
 const month = months[monthIndex].substring(0, 3);
 const day = currentDate.getDate();
+
 dateElement.innerHTML = `${month}<br>${day}`;
+
 const currentHour = new Date().getHours();
 
 let greeting;
@@ -47,7 +50,7 @@ function add() {
   }
 }
 
-const todoForm = document.querySelector("#todoForm");
+const todoForm = document.querySelector("form");
 
 todoForm.addEventListener("submit", function (event) {
   event.preventDefault();
@@ -64,8 +67,50 @@ todoForm.addEventListener("submit", function (event) {
     class: `todotask${todos.length + 1}`,
   };
   todos.push(newTodo);
+  renderTodos(newTodo);
   console.log(todos);
 });
+
+function renderTodos(todo) {
+  const todoDetails = document.createElement("div");
+  todoDetails.classList.add("todoDetails");
+  todoDetails.id = todo.id;
+
+  const checkbox = document.createElement("input");
+  checkbox.type = "checkbox";
+  checkbox.id = `checkbox_${todo.id}`;
+
+  const label = document.createElement("label");
+  label.setAttribute("for", `checkbox_${todo.id}`);
+  label.classList.add("todotask");
+
+  const todoDate = document.createElement("div");
+  todoDate.classList.add("todoDate");
+  todoDate.textContent = todo.date;
+
+  const task = document.createElement("p");
+  task.classList.add("task");
+  task.textContent = todo.title;
+
+  const icon = document.createElement("i");
+  icon.classList.add("fa-solid", "fa-check");
+
+  const deleteIcon = document.createElement("i");
+  deleteIcon.classList.add("fa-solid", "fa-trash");
+  deleteIcon.onclick = function () {
+    remove(idToRemove);
+  };
+
+  label.appendChild(todoDate);
+  label.appendChild(task);
+  label.appendChild(icon);
+
+  todoDetails.appendChild(checkbox);
+  todoDetails.appendChild(label);
+  todoDetails.appendChild(deleteIcon);
+
+  tasksContainer.appendChild(todoDetails);
+}
 
 function remove(idToRemove) {
   removeTodoById(idToRemove);

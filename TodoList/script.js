@@ -53,6 +53,7 @@ todoForm.addEventListener("submit", function (event) {
 
   if (title.length === 0) {
     alert("Enter the task name!!!");
+    return;
   }
 
   const _currentDate = new Date();
@@ -66,7 +67,7 @@ todoForm.addEventListener("submit", function (event) {
     class: `todotask${todos.length + 1}`,
   };
   todos.push(newTodo);
-
+  document.getElementById("todoInput").value = "";
   renderTodos();
 });
 
@@ -88,9 +89,19 @@ function renderTodos() {
     </div>
     `;
   }
+  localStorage.setItem("todos", JSON.stringify(todos)); //object to string
 }
 
 function remove(idToRemove) {
   todos = todos.filter((todo) => todo.id !== idToRemove);
   renderTodos();
 }
+
+addEventListener("DOMContentLoaded", (event) => {
+  const localTodos = localStorage.getItem("todos");
+  if (localTodos) {
+    //not undefined
+    todos = JSON.parse(localTodos); //string to object
+    renderTodos();
+  }
+});

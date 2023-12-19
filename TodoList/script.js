@@ -78,9 +78,9 @@ function renderTodos() {
     tasksContainer.innerHTML += `
       <div class="todoDetails">
       <input type="checkbox" id="${todo.id}" ${
-          todo?.completed ? "checked" : ""
-        }/>
-      <label for="todotask1" class="${todo.class}">
+      todo?.completed ? "checked" : ""
+    }/>
+      <label for="${todo.id}" class="${todo.class}">
         <div class="todoDate">${todo.date}</div>
         <p class="task">${todo.title}</p>
       </label>

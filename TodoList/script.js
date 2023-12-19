@@ -2,6 +2,7 @@ const dateElement = document.querySelector(".date");
 const greetingElement = document.querySelector(".greeting h2");
 const addElement = document.querySelector(".addbtn");
 const tasksContainer = document.getElementById("tasks");
+
 let todos = [];
 const currentDate = new Date();
 const months = [
@@ -43,21 +44,19 @@ if (currentHour >= 0 && currentHour < 12) {
 
 greetingElement.innerHTML = greeting;
 
-function add() {
-  const input = document.getElementById("todoInput");
-  if (input.value == "") {
-    alert("Please Enter The Task !!!!");
-  }
-}
-
 const todoForm = document.querySelector("form");
 
 todoForm.addEventListener("submit", function (event) {
   event.preventDefault();
 
   const title = document.getElementById("todoInput").value;
-  currentDate = new Date();
-  const date = currentDate.toDateString();
+
+  if (title.length === 0) {
+    alert("Enter the task name!!!");
+  }
+
+  const _currentDate = new Date();
+  const date = _currentDate.toDateString();
 
   const newTodo = {
     title: title,
@@ -67,56 +66,31 @@ todoForm.addEventListener("submit", function (event) {
     class: `todotask${todos.length + 1}`,
   };
   todos.push(newTodo);
-  renderTodos(newTodo);
-  console.log(todos);
+
+  renderTodos();
 });
 
-function renderTodos(todo) {
-  const todoDetails = document.createElement("div");
-  todoDetails.classList.add("todoDetails");
-  todoDetails.id = todo.id;
+function renderTodos() {
+  tasksContainer.innerHTML = "";
+  for (let i = 0; i < todos.length; i++) {
+    const todo = todos[i];
 
-  const checkbox = document.createElement("input");
-  checkbox.type = "checkbox";
-  checkbox.id = `checkbox_${todo.id}`;
-
-  const label = document.createElement("label");
-  label.setAttribute("for", `checkbox_${todo.id}`);
-  label.classList.add("todotask");
-
-  const todoDate = document.createElement("div");
-  todoDate.classList.add("todoDate");
-  todoDate.textContent = todo.date;
-
-  const task = document.createElement("p");
-  task.classList.add("task");
-  task.textContent = todo.title;
-
-  const icon = document.createElement("i");
-  icon.classList.add("fa-solid", "fa-check");
-
-  const deleteIcon = document.createElement("i");
-  deleteIcon.classList.add("fa-solid", "fa-trash");
-  deleteIcon.onclick = function () {
-    remove(idToRemove);
-  };
-
-  label.appendChild(todoDate);
-  label.appendChild(task);
-  label.appendChild(icon);
-
-  todoDetails.appendChild(checkbox);
-  todoDetails.appendChild(label);
-  todoDetails.appendChild(deleteIcon);
-
-  tasksContainer.appendChild(todoDetails);
+    tasksContainer.innerHTML += `
+      <div class="todoDetails">
+      <input type="checkbox" id="${todo.id}" ${
+          todo?.completed ? "checked" : ""
+        }/>
+      <label for="todotask1" class="${todo.class}">
+        <div class="todoDate">${todo.date}</div>
+        <p class="task">${todo.title}</p>
+      </label>
+      <i class="fa-solid fa-trash" onclick="remove('${todo.id}')"></i>
+    </div>
+    `;
+  }
 }
 
 function remove(idToRemove) {
-  removeTodoById(idToRemove);
-}
-
-function removeTodoById(idToRemove) {
   todos = todos.filter((todo) => todo.id !== idToRemove);
-  console.log(todos);
+  renderTodos();
 }

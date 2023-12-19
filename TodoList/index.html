@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
   <script src="https://kit.fontawesome.com/c977b04c1d.js" crossorigin="anonymous"></script>
 </head>
 
@@ -25,26 +25,12 @@
         </div>
       </div>
 
-
       <form>
         <input type="text" placeholder="Add Todo" id="todoInput">
-        <button id="addbtn" onclick="add()">Add</button>
-
+        <button id="addbtn" type="submit">Add</button>
       </form>
 
-
-
       <div id="tasks">
-        <!-- Todo items will be appended here -->
-        <div class="todoDetails">
-          <input type="checkbox" id="todotask1" />
-          <label for="todotask1" class="todotask">
-            <div class="todoDate">2023-12-15</div>
-            <p class="task">Call MAX</p>
-          </label>
-          <i class="fa-solid fa-trash" onclick="remove('todotask1')"></i>
-        </div>
-
       </div>
     </div>
   </main>

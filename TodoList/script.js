@@ -3,6 +3,8 @@ const greetingElement = document.querySelector(".greeting h2");
 const addElement = document.querySelector(".addbtn");
 const tasksContainer = document.getElementById("tasks");
 
+const useServer = false;
+
 const apiURL = "http://localhost:3000";
 
 let todos = [];
@@ -68,15 +70,19 @@ todoForm.addEventListener("submit", async function (event) {
     id: `todotask${todos.length + 1}${_currentDate.toISOString()}`, //to get unique ids
   };
 
-  todos = await addTodoToServer(newTodo);
-  // todos.push(newTodo); // since we are performing this logic in backend now
+  if (useServer) {
+    todos = await addTodoToServer(newTodo);
+  } else {
+    todos.push(newTodo);
+  }
 
   document.getElementById("todoInput").value = "";
   renderTodos();
 });
 
-function renderTodos() {
-  tasksContainer.innerHTML = "";
+async function renderTodos() {
+  tasksContainer.innerHTML = ""; // Clear the container
+
   for (let i = 0; i < todos.length; i++) {
     const todo = todos[i];
 
@@ -95,31 +101,42 @@ function renderTodos() {
     </div>
     `;
   }
-  // localStorage.setItem("todos", JSON.stringify(todos));
+
+  if (!useServer) {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }
 }
 
-function toggleComplete(target) {
+async function toggleComplete(target) {
   console.log(target);
   const id = target.id;
 
-  todos = todos.map((t) => {
-    if (id === t.id) {
-      const newTodo = {
-        ...t,
-        completed: target.checked,
-      };
+  if (useServer) {
+    todos = await toggleTodoCompletionOnServer(id, target.checked);
+  } else {
+    todos = todos.map((t) => {
+      if (id === t.id) {
+        const newTodo = {
+          ...t,
+          completed: target.checked,
+        };
 
-      return newTodo;
-    } else {
-      return t;
-    }
-  });
+        return newTodo;
+      } else {
+        return t;
+      }
+    });
+  }
 
   renderTodos();
 }
 
-function remove(idToRemove) {
-  todos = todos.filter((todo) => todo.id !== idToRemove);
+async function remove(idToRemove) {
+  if (useServer) {
+    todos = await removeTodoFromServer(idToRemove);
+  } else {
+    todos = todos.filter((t) => t.id !== idToRemove);
+  }
   renderTodos();
 }
 
@@ -127,28 +144,104 @@ addEventListener("DOMContentLoaded", (event) => {
   populateItems();
 });
 
-function populateItems() {
-  // Local Storage data
-  // const localTodos = localStorage.getItem("todos");
-  // if (localTodos) {
-  //   //not equal to  undefined
-  //   todos = JSON.parse(localTodos); //string to object
-  //   renderTodos();
-  // }
+async function populateItems() {
+  if (useServer) {
+    const serverTodos = await fetchTodosFromServer();
+    if (serverTodos) {
+      todos = serverTodos;
+      renderTodos();
+    }
+  } else {
+    // Local Storage data
+    const localTodos = localStorage.getItem("todos");
+    if (localTodos) {
+      //not equal to  undefined
+      todos = JSON.parse(localTodos); //string to object
+      renderTodos();
+    }
+  }
 }
 
-// Server side code
-
+// Backend integration
 async function addTodoToServer(todo) {
-  const res = await fetch(`${apiURL}/todos`, {
-    method: "POST",
-    body: JSON.stringify({
-      ...todo,
-    }),
-    headers: {
-      "content-type": "application/json",
-    },
-  });
+  try {
+    const res = await fetch(`${apiURL}/todos`, {
+      method: "POST",
+      body: JSON.stringify({
+        ...todo,
+      }),
+      headers: {
+        "content-type": "application/json",
+      },
+    });
 
-  return await res?.json();
+    if (!res.ok) {
+      throw new Error(`Failed to add todo. Server returned ${res.status}`);
+    }
+
+    const updatedTodos = await res.json();
+    return updatedTodos;
+  } catch (error) {
+    console.error("Error adding todo to server:", error.message);
+  }
+}
+
+async function fetchTodosFromServer() {
+  try {
+    const res = await fetch(`${apiURL}/todos`);
+
+    if (!res.ok) {
+      throw new Error(`Failed to fetch todos. Server returned ${res.status}`);
+    }
+
+    const todos = await res.json();
+    return todos;
+  } catch (error) {
+    console.error("Error fetching todos from server:", error.message);
+  }
+}
+
+async function toggleTodoCompletionOnServer(todoId, isChecked) {
+  try {
+    const res = await fetch(`${apiURL}/todos/${todoId}`, {
+      method: "POST",
+      body: JSON.stringify({
+        checked: isChecked,
+      }),
+      headers: {
+        "content-type": "application/json",
+      },
+    });
+
+    if (!res.ok) {
+      throw new Error(
+        `Failed to toggle todo completion. Server returned ${res.status}`
+      );
+    }
+
+    const updatedTodos = await res.json();
+    return updatedTodos;
+  } catch (error) {
+    console.error("Error toggling todo completion on server:", error.message);
+  }
+}
+
+async function removeTodoFromServer(todoId) {
+  try {
+    const res = await fetch(`${apiURL}/todos/${todoId}`, {
+      method: "DELETE",
+      headers: {
+        "content-type": "application/json",
+      },
+    });
+
+    if (!res.ok) {
+      throw new Error(`Failed to remove todo. Server returned ${res.status}`);
+    }
+
+    const updatedTodos = await res.json();
+    return updatedTodos;
+  } catch (error) {
+    console.error("Error removing todo from server:", error.message);
+  }
 }

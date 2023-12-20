@@ -7,7 +7,7 @@ const port = 3000;
 app.use(express.json()); // to accept json, so that req.body can accept json from client
 app.use(cors());
 
-const todos = [];
+let todos = [];
 
 app.get("/", (req, res) => {
   res.send("Hello World!");
@@ -32,7 +32,7 @@ app.post("/todos", (req, res) => {
 
 app.delete("/todos/:id", (req, res) => {
   const idToRemove = req.params.id;
-  const todos = todos.filter((todo) => todo.id !== idToRemove);
+  todos = todos.filter((todo) => todo.id !== idToRemove);
 
   res.send(todos);
 });

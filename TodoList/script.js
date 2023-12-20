@@ -61,12 +61,13 @@ todoForm.addEventListener("submit", function (event) {
 
   const newTodo = {
     title: title,
-    date: date,
     completed: false,
-    id: `todotask${todos.length + 1}${date}`,
-    class: `todotask${todos.length + 1}${date}`,
+    date: date,
+    id: `todotask${todos.length + 1}${_currentDate.toISOString()}`, //to get unique ids
   };
+
   todos.push(newTodo);
+
   document.getElementById("todoInput").value = "";
   renderTodos();
 });
@@ -79,14 +80,14 @@ function renderTodos() {
     tasksContainer.innerHTML += `
       <div class="todoDetails">
         <input type="checkbox" id="${todo.id}" ${
-        todo?.completed ? "checked" : ""
-      } onchange="toggleComplete(this)"/>
+      todo?.completed ? "checked" : ""
+    } onchange="toggleComplete(this)"/>
 
-        <label for="${todo.id}" class="${todo.class}">
+        <label for="${todo.id}" >
           <div class="todoDate">${todo.date}</div>
           <p class="task">${todo.title}</p>
         </label>
-        
+
         <i class="fa-solid fa-trash" onclick="remove('${todo.id}')"></i>
     </div>
     `;

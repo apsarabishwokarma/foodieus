@@ -157,13 +157,6 @@ input[type="checkbox"]:not(:checked) + label::after {
   opacity: 0;
 }
 
-.todotask {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  gap: 1px;
-}
-
 .todoDate {
   margin-bottom: 0;
   font-size: small;

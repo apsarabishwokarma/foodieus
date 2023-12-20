@@ -46,7 +46,7 @@ greetingElement.innerHTML = greeting;
 
 const todoForm = document.querySelector("form");
 
-todoForm.addEventListener("submit", function (event) {
+todoForm.addEventListener("submit", async function (event) {
   event.preventDefault();
 
   const title = document.getElementById("todoInput").value;
@@ -92,7 +92,7 @@ function renderTodos() {
     </div>
     `;
   }
-  localStorage.setItem("todos", JSON.stringify(todos)); //object to string
+  localStorage.setItem("todos", JSON.stringify(todos));
 }
 
 function toggleComplete(target) {
@@ -121,10 +121,14 @@ function remove(idToRemove) {
 }
 
 addEventListener("DOMContentLoaded", (event) => {
+  populateItems();
+});
+
+function populateItems() {
   const localTodos = localStorage.getItem("todos");
   if (localTodos) {
     //not equal to  undefined
     todos = JSON.parse(localTodos); //string to object
     renderTodos();
   }
-});
+}

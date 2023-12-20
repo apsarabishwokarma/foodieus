@@ -37,6 +37,20 @@ app.delete("/todos/:id", (req, res) => {
   res.send(todos);
 });
 
+app.post("/todos/:id", (req, res) => {
+  const idToToggle = req.params.id;
+  const isChecked = req.body.checked;
+
+  const todo = todos.find((todo) => todo.id === idToToggle);
+
+  if (todo) {
+    todo.completed = isChecked;
+    res.send(todos);
+  } else {
+    res.status(404).send({ message: "Todo not found" });
+  }
+});
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });

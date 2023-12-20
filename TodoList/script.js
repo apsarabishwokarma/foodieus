@@ -3,6 +3,8 @@ const greetingElement = document.querySelector(".greeting h2");
 const addElement = document.querySelector(".addbtn");
 const tasksContainer = document.getElementById("tasks");
 
+const apiURL = "http://localhost:3000";
+
 let todos = [];
 const currentDate = new Date();
 const months = [
@@ -66,7 +68,8 @@ todoForm.addEventListener("submit", async function (event) {
     id: `todotask${todos.length + 1}${_currentDate.toISOString()}`, //to get unique ids
   };
 
-  todos.push(newTodo);
+  todos = await addTodoToServer(newTodo);
+  // todos.push(newTodo); // since we are performing this logic in backend now
 
   document.getElementById("todoInput").value = "";
   renderTodos();
@@ -92,7 +95,7 @@ function renderTodos() {
     </div>
     `;
   }
-  localStorage.setItem("todos", JSON.stringify(todos));
+  // localStorage.setItem("todos", JSON.stringify(todos));
 }
 
 function toggleComplete(target) {
@@ -125,10 +128,27 @@ addEventListener("DOMContentLoaded", (event) => {
 });
 
 function populateItems() {
-  const localTodos = localStorage.getItem("todos");
-  if (localTodos) {
-    //not equal to  undefined
-    todos = JSON.parse(localTodos); //string to object
-    renderTodos();
-  }
+  // Local Storage data
+  // const localTodos = localStorage.getItem("todos");
+  // if (localTodos) {
+  //   //not equal to  undefined
+  //   todos = JSON.parse(localTodos); //string to object
+  //   renderTodos();
+  // }
+}
+
+// Server side code
+
+async function addTodoToServer(todo) {
+  const res = await fetch(`${apiURL}/todos`, {
+    method: "POST",
+    body: JSON.stringify({
+      ...todo,
+    }),
+    headers: {
+      "content-type": "application/json",
+    },
+  });
+
+  return await res?.json();
 }

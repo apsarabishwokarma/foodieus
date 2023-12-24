@@ -22,6 +22,8 @@ Here is a list of the projects included in this folder:
 
 [Spotify](https://apsarabiswokarma.github.io/webDev-projects/spotify)
 
+[TODO](https://apsarabiswokarma.github.io/webDev-projects/TodoList)
+
 [Digital clock](https://apsarabiswokarma.github.io/webDev-projects/clock)
 
 [projectile-simulation](https://apsarabiswokarma.github.io/webDev-projects/Projectile-simulation)
@@ -30,15 +32,13 @@ Here is a list of the projects included in this folder:
 
 [Portfolio](https://apsarabiswokarma.github.io/webDev-projects/portfolio)
 
-[Portfolio Template](https://apsarabiswokarma.github.io/webDev-projects/portfolioTemplate)
-
 [minicalender](https://apsarabiswokarma.github.io/webDev-projects/miniCalender)
 
 [TicTacToe](https://apsarabiswokarma.github.io/webDev-projects/tictactoe)
 
 [Responsiveloginform](https://apsarabiswokarma.github.io/webDev-projects/basic%20of%20form)
 
-[TODO](https://apsarabiswokarma.github.io/webDev-projects/TodoList)
+
 
 
 
